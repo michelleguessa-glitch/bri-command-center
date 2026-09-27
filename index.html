@@ -116,9 +116,6 @@ main{padding:20px 16px 0}
 <body>
 <div class="appbar"><span>Bri Babineaux</span></div>
 <main>
-<header class="mast">
-<h1>Bri Command Center</h1>
-</header>
 <nav class="tabs" aria-label="Command center sections">
 <div class="tabs-row overview-row"><button class="active" data-section="overview">Overview</button></div>
 <div class="tabs-row tabs-grid">
@@ -167,7 +164,7 @@ main{padding:20px 16px 0}
 
 <section class="view" data-view="calendar">
 <div class="section-head"><div><h2>Calendar</h2><p>0 items</p></div></div>
-<div class="filters"><button class="active">Primary calendar</button><button>All calendars</button></div>
+<div class="filters"><button>All calendars</button><button class="active">Primary calendar</button></div>
 <section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming calendar items</h3><p>Scheduled dates will appear here.</p></div></section>
 <section><div class="period-head"><h3>Past</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
 </section>
@@ -195,7 +192,7 @@ main{padding:20px 16px 0}
 
 <section class="view" data-view="revenue">
 <div class="section-head"><div><h2>Revenue</h2></div></div>
-<div class="filters" id="revenue-filters"><button class="active" data-r="records">Revenue records</button><button data-r="expense">End of year Expense Report</button></div>
+<div class="filters" id="revenue-filters"><button data-r="expense">End of year Expense Report</button><button class="active" data-r="records">Revenue records</button></div>
 <div id="revenue-records-view">
 <div class="financial"><div><span>Annual revenue received</span><strong>$0</strong><small>Recorded revenue</small></div><div><span>Revenue records</span><strong>0</strong><small>Bookings with entered fees</small></div></div>
 <section><div class="period-head"><h3>Received bookings</h3><span class="count">0</span></div><div class="empty"><h3>No revenue recorded</h3><p>Paid booking revenue will appear here.</p></div></section>
@@ -212,11 +209,11 @@ main{padding:20px 16px 0}
 <section class="view" data-view="notes">
 <div class="section-head"><div><h2>Notes</h2><p>0 items</p></div></div>
 <p class="section-intro">Track the latest email correspondence tied to a booking, including podcast, radio, and TV interviews.</p>
-<div class="group"><div class="category-head"><div><h3>Tour Dates</h3><p>Correspondence tracking</p></div><span class="count">0</span></div><div class="empty compact" style="margin-top:8px">No correspondence tracked yet.</div></div>
 <div class="group"><div class="category-head"><div><h3>Performance</h3><p>Correspondence tracking</p></div><span class="count">0</span></div><div class="empty compact" style="margin-top:8px">No correspondence tracked yet.</div></div>
-<div class="group"><div class="category-head"><div><h3>Special Events</h3><p>Correspondence tracking</p></div><span class="count">0</span></div><div class="empty compact" style="margin-top:8px">No correspondence tracked yet.</div></div>
 <div class="group"><div class="category-head"><div><h3>Podcast Interviews</h3><p>Correspondence tracking</p></div><span class="count">0</span></div><div class="empty compact" style="margin-top:8px">No correspondence tracked yet.</div></div>
 <div class="group"><div class="category-head"><div><h3>Radio Interviews</h3><p>Correspondence tracking</p></div><span class="count">0</span></div><div class="empty compact" style="margin-top:8px">No correspondence tracked yet.</div></div>
+<div class="group"><div class="category-head"><div><h3>Special Events</h3><p>Correspondence tracking</p></div><span class="count">0</span></div><div class="empty compact" style="margin-top:8px">No correspondence tracked yet.</div></div>
+<div class="group"><div class="category-head"><div><h3>Tour Dates</h3><p>Correspondence tracking</p></div><span class="count">0</span></div><div class="empty compact" style="margin-top:8px">No correspondence tracked yet.</div></div>
 <div class="group"><div class="category-head"><div><h3>TV Interviews</h3><p>Correspondence tracking</p></div><span class="count">0</span></div><div class="empty compact" style="margin-top:8px">No correspondence tracked yet.</div></div>
 </section>
 
