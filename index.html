@@ -16,7 +16,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#acb8c6;color:#141414;line-height:1.5;padding:0 0 48px;max-width:1100px;margin:0 auto}
-.appbar{position:sticky;top:0;z-index:50;background:#5c5754;color:#fff;text-align:center;font-weight:600;font-size:17px;letter-spacing:.02em;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.ws-head{text-align:center;padding:28px 16px 20px;border-bottom:1px solid #141414;margin-bottom:26px}.ws-eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#333;margin:0 0 10px}.ws-title{font-family:Georgia,"Times New Roman",serif;font-size:34px;margin:0 0 12px;color:#141414;font-weight:700}.ws-pill{display:inline-block;border:1.5px solid #141414;border-radius:999px;padding:5px 16px;font-size:12px;font-weight:700;letter-spacing:.06em;color:#141414;background:transparent}
 main{padding:20px 16px 0}
 .serif{font-family:Georgia,"Times New Roman",Times,serif}
 /* ---- header ---- */
@@ -25,10 +25,10 @@ main{padding:20px 16px 0}
 /* ---- tabs ---- */
 .tabs{margin-bottom:26px}
 .tabs-row{margin-bottom:10px}
-.overview-row button{width:100%;display:block;background:#5c5754;color:#fff;border:none;border-radius:16px;padding:18px;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.01em}
+.overview-row button{width:100%;display:block;background:#4a4038;color:#fff;border:none;border-radius:16px;padding:18px;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.01em}
 .tabs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .tabs-grid button{background:#fff;color:#141414;border:none;border-radius:7px;padding:15px 6px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;line-height:1.25;min-height:58px;display:flex;align-items:center;justify-content:center;text-align:center}
-.tabs-grid button.active{background:#5c5754;color:#fff}
+.tabs-grid button.active{background:#4a4038;color:#fff}
 /* ---- views ---- */
 .view{display:none}
 .view.active{display:block}
@@ -57,12 +57,12 @@ main{padding:20px 16px 0}
 .section-intro{color:#35363a;margin:10px 2px 16px;font-size:15px}
 .filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
 .filters button{padding:11px 18px;border:none;background:#fff;border-radius:14px;font-size:14px;font-weight:700;color:#141414;cursor:pointer;font-family:inherit}
-.filters button.active{background:#5c5754;color:#fff}
+.filters button.active{background:#4a4038;color:#fff}
 .filters button span{opacity:.65;font-weight:400}
 .period-head{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 10px}
 .period-head h3{font-size:17px;font-weight:700}
-.count{font-size:12px;font-weight:700;background:#5c5754;color:#fff;border-radius:12px;padding:3px 12px}
-.empty{background:#f5f1ee;border:1.5px dashed #5c5754;border-radius:6px;padding:28px 20px;text-align:center;color:#35363a;margin-bottom:14px}
+.count{font-size:12px;font-weight:700;background:#4a4038;color:#fff;border-radius:12px;padding:3px 12px}
+.empty{background:#f5f1ee;border:1.5px dashed #4a4038;border-radius:6px;padding:28px 20px;text-align:center;color:#35363a;margin-bottom:14px}
 .empty h3{font-size:16px;color:#141414;margin-bottom:6px;font-weight:700}
 .empty.compact{padding:14px}
 .group{margin-bottom:12px}
@@ -97,7 +97,7 @@ main{padding:20px 16px 0}
 .done-check{flex:0 0 auto;margin-top:3px;cursor:pointer}
 .done-check input{position:absolute;opacity:0;width:1px;height:1px}
 .done-check .box{display:inline-block;width:22px;height:22px;border:2px solid #141414;border-radius:5px;background:#fff;vertical-align:middle;position:relative}
-.done-check input:checked + .box{background:#5c5754;border-color:#5c5754}
+.done-check input:checked + .box{background:#4a4038;border-color:#4a4038}
 .done-check input:checked + .box::after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(42deg)}
 .done-check input:focus-visible + .box{outline:2px solid #141414;outline-offset:2px}
 .record-title{font-size:15px;font-weight:700;color:#141414}
@@ -114,7 +114,7 @@ main{padding:20px 16px 0}
 </style>
 </head>
 <body>
-<div class="appbar"><span>Bri Babineaux</span></div>
+<header class="ws-head"><p class="ws-eyebrow">View-only workspace</p><h1 class="ws-title">Bri Command Center</h1><span class="ws-pill">Read only</span></header>
 <main>
 <nav class="tabs" aria-label="Command center sections">
 <div class="tabs-row overview-row"><button class="active" data-section="overview">Overview</button></div>
@@ -127,7 +127,7 @@ main{padding:20px 16px 0}
 <div class="overview-lead">
 <p class="eyebrow">Operations at a glance</p>
 <h2>Ready for the first update</h2>
-<p class="lead-sub">The next scheduled item will appear here.</p>
+<p class="lead-sub">The workspace is organized and ready. Records will appear in their matching sections and categories.</p>
 </div>
 <hr class="rule">
 <div class="snapshot" aria-label="Workspace totals">
@@ -156,7 +156,7 @@ main{padding:20px 16px 0}
 
 <section class="view" data-view="bookings">
 <div class="section-head"><div><h2>Bookings</h2><p>0 items</p></div></div>
-<div class="filters" id="booking-filters"><button class="active" data-f="performance">Performance <span>0</span></button><button data-f="special">Special Events <span>0</span></button><button data-f="tour">Tour Dates <span>0</span></button></div>
+<div class="filters" id="booking-filters"><button class="active" data-f="all">All bookings <span>0</span></button><button data-f="performance">Performance <span>0</span></button><button data-f="special">Special Events <span>0</span></button><button data-f="tour">Tour Dates <span>0</span></button></div>
 <div class="filters" id="se-subfilters" style="display:none"><button class="active">All special events <span>0</span></button><button>Radio interviews <span>0</span></button><button>TV interviews <span>0</span></button></div>
 <section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming bookings</h3><p>Tour dates, performances, and special events will appear here. Special-event records can be tagged TV or Radio; podcasts remain in Podcasts.</p></div></section>
 <section><div class="period-head"><h3>Past</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
