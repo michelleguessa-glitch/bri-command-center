@@ -24,6 +24,7 @@ main{padding:0 16px}
 .tabs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .tabs-grid button{background:#fff;color:#111;border:0;border-radius:8px;padding:15px 6px;font-size:12px;font-weight:850;cursor:pointer;font-family:inherit;line-height:1.25;min-height:58px;display:flex;align-items:center;justify-content:center;text-align:center}
 .tabs-grid button.active{background:#5c5754;color:#fff}
+.tabs-grid button.span-all{grid-column:1 / -1}
 /* ---- views ---- */
 .view{display:none}
 .view.active{display:block}
@@ -151,7 +152,7 @@ main{padding:0 16px}
 <main>
 <nav class="tabs" aria-label="Command center sections">
 <div class="tabs-grid">
-<button data-section="appointments">Appointments</button><button data-section="bookings">Bookings</button><button data-section="calendar">Calendar</button><button data-section="contacts">Contacts</button><button class="active" data-section="overview">Overview</button><button data-section="podcasts">Podcasts</button><button data-section="revenue">Revenue</button><button data-section="tasks">Tasks</button><button data-section="travel">Travel</button><button data-section="notes">Updates</button>
+<button data-section="appointments">Appointments</button><button data-section="bookings">Bookings</button><button data-section="calendar">Calendar</button><button data-section="contacts">Contacts</button><button data-section="podcasts">Podcasts</button><button data-section="revenue">Revenue</button><button data-section="tasks">Tasks</button><button data-section="travel">Travel</button><button data-section="notes">Updates</button><button class="active span-all" data-section="overview">Overview</button>
 </div>
 </nav>
 
