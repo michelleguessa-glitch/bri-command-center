@@ -3,183 +3,305 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bri Command Center Snapshot</title>
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Bri Command Center">
+<meta name="theme-color" content="#acb8c6">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Bri Command Center</title>
 <style>
 :root{color-scheme:light}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f7f5f2;color:#1a1a1a;line-height:1.5;padding:16px;max-width:1100px;margin:0 auto}
-.mast{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:20px;margin-bottom:16px}
-.title-line{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.title-line p{font-size:12px;color:#8a8478;text-transform:uppercase;letter-spacing:.08em}
-.title-line h1{font-size:28px;font-weight:700}
-.readonly{font-size:12px;background:#eef0ee;color:#5c665c;border-radius:20px;padding:4px 12px;white-space:nowrap}
-.search{margin-top:12px;position:relative}
-.search label{position:absolute;left:-9999px}
-.search input{width:100%;padding:10px 14px 10px 40px;border:1px solid #e5e0d8;border-radius:8px;font-size:15px}
-.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:#8a8478;fill:none;stroke-width:2}
-.tabs{margin-bottom:16px}
-.tabs-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
-.tabs-row button{padding:8px 16px;border:1px solid #e5e0d8;background:#fff;border-radius:20px;font-size:14px;cursor:pointer}
-.tabs-row button.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+html{-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#acb8c6;color:#141414;line-height:1.5;padding:0 0 48px;max-width:1100px;margin:0 auto}
+.appbar{position:sticky;top:0;z-index:50;background:#5c5754;color:#fff;text-align:center;font-weight:600;font-size:17px;letter-spacing:.02em;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+main{padding:20px 16px 0}
+.serif{font-family:Georgia,"Times New Roman",Times,serif}
+/* ---- header ---- */
+.mast{margin:6px 2px 18px}
+.mast h1{font-family:Georgia,"Times New Roman",Times,serif;font-size:34px;font-weight:400;color:#111;letter-spacing:.01em}
+/* ---- tabs ---- */
+.tabs{margin-bottom:26px}
+.tabs-row{margin-bottom:10px}
+.overview-row button{width:100%;display:block;background:#5c5754;color:#fff;border:none;border-radius:16px;padding:18px;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.01em}
+.tabs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tabs-grid button{background:#fff;color:#141414;border:none;border-radius:14px;padding:15px 6px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;line-height:1.25}
+.tabs-grid button.active{background:#5c5754;color:#fff}
+/* ---- views ---- */
 .view{display:none}
-.view:first-of-type{display:block}
-.overview-lead{margin-bottom:16px}
-.eyebrow{font-size:12px;color:#8a8478;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.overview-lead h2{font-size:22px;margin-bottom:6px}
-.overview-lead p{color:#5c5754}
-.snapshot{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.snapshot button{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:16px;text-align:left;cursor:pointer;font-family:inherit}
-.snapshot button strong{font-size:24px;display:block}
-.snapshot button span{font-size:14px;color:#5c5754;display:block;margin:4px 0}
-.snapshot button small{font-size:12px;color:#8a8478}
-.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.section-head h2{font-size:20px}
-.section-head p{font-size:13px;color:#8a8478}
-.section-intro{color:#5c5754;margin-bottom:12px;font-size:14px}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
-.filters button{padding:6px 14px;border:1px solid #e5e0d8;background:#fff;border-radius:16px;font-size:13px;cursor:pointer}
-.filters button.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
-.filters button span{opacity:.7}
-.period-head{display:flex;justify-content:space-between;align-items:center;margin:16px 0 8px}
-.period-head h3{font-size:16px}
-.count{font-size:12px;background:#eef0ee;border-radius:12px;padding:2px 10px;color:#5c665c}
-.empty{background:#fff;border:1px dashed #d8d2c6;border-radius:12px;padding:24px;text-align:center;color:#8a8478}
-.empty h3{font-size:16px;color:#5c5754;margin-bottom:4px}
-.empty.compact{padding:12px}
+.view.active{display:block}
+/* ---- overview ---- */
+.overview-lead{margin:34px 2px 0}
+.eyebrow{font-size:13px;font-weight:800;color:#111;text-transform:uppercase;letter-spacing:.16em;margin-bottom:10px}
+.overview-lead h2{font-family:Georgia,"Times New Roman",Times,serif;font-size:42px;font-weight:400;color:#111;line-height:1.12;margin-bottom:12px}
+.overview-lead p.lead-sub{font-size:17px;color:#35363a;margin-bottom:26px}
+.rule{border:none;border-top:1.5px solid rgba(20,20,20,.75);margin:0 0 34px}
+/* ---- stat cards ---- */
+.snapshot{display:flex;flex-direction:column;gap:0}
+.stat{background:#dedddb;border:1.5px solid #141414;padding:26px 26px 22px;cursor:pointer;font-family:inherit;text-align:left;width:100%}
+.stat .num{font-family:Georgia,"Times New Roman",Times,serif;font-size:46px;color:#151516;line-height:1;margin-bottom:10px}
+.stat .lbl{font-size:16px;color:#3a3a3c;display:block;margin-bottom:22px}
+.stat .foot{display:flex;justify-content:space-between;align-items:center}
+.stat .foot b{font-size:15px;font-weight:800;letter-spacing:.06em;color:#141414}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr}
+.stat-grid .stat{background:#f5f1ee}
+.stat-grid .stat .num{font-size:40px}
+.stat + .stat-grid,.stat-grid + .stat-grid{border-top:none}
+.stat-grid .stat + .stat{border-left:none}
+/* ---- sections ---- */
+.section-head{margin:34px 2px 6px}
+.section-head h2{font-family:Georgia,"Times New Roman",Times,serif;font-size:26px;font-weight:400;color:#111}
+.section-head p{font-size:14px;color:#35363a}
+.section-intro{color:#35363a;margin:10px 2px 16px;font-size:15px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.filters button{padding:11px 18px;border:none;background:#fff;border-radius:14px;font-size:14px;font-weight:700;color:#141414;cursor:pointer;font-family:inherit}
+.filters button.active{background:#5c5754;color:#fff}
+.filters button span{opacity:.65;font-weight:400}
+.period-head{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 10px}
+.period-head h3{font-size:17px;font-weight:700}
+.count{font-size:12px;font-weight:700;background:#5c5754;color:#fff;border-radius:12px;padding:3px 12px}
+.empty{background:#f5f1ee;border:1.5px dashed #5c5754;border-radius:6px;padding:28px 20px;text-align:center;color:#35363a;margin-bottom:14px}
+.empty h3{font-size:16px;color:#141414;margin-bottom:6px;font-weight:700}
+.empty.compact{padding:14px}
 .group{margin-bottom:12px}
-.category-head{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid #e5e0d8;border-radius:8px;padding:12px 16px}
-.category-head h3{font-size:15px}
-.category-head p{font-size:12px;color:#8a8478}
-.subcategories{padding:8px 0 0 16px}
-.subcategory{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;border-bottom:1px solid #f0ece4}
-.subcategory span{color:#8a8478;font-size:13px}
-.financial{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:16px}
-.financial>div{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:16px}
-.financial span{font-size:13px;color:#8a8478;display:block}
-.financial strong{font-size:22px;display:block;margin:4px 0}
-.financial small{font-size:12px;color:#8a8478}
-.report{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:20px;margin-bottom:16px}
-.report-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
-.report-top h3{font-size:18px}
+.category-head{display:flex;justify-content:space-between;align-items:center;background:#f5f1ee;border:1.5px solid #141414;border-radius:6px;padding:14px 18px}
+.category-head h3{font-size:15px;font-weight:700}
+.category-head p{font-size:12px;color:#35363a}
+.subcategories{padding:10px 0 0 18px}
+.subcategory{display:flex;justify-content:space-between;padding:8px 0;font-size:14px;border-bottom:1px solid rgba(20,20,20,.25)}
+.subcategory span{color:#35363a;font-size:13px}
+.financial{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:18px}
+.financial>div{background:#f5f1ee;border:1.5px solid #141414;padding:22px}
+.financial>div + div{border-left:none}
+.financial span{font-size:14px;color:#35363a;display:block}
+.financial strong{font-family:Georgia,"Times New Roman",Times,serif;font-size:34px;display:block;margin:8px 0;font-weight:400;color:#151516}
+.financial small{font-size:12px;color:#35363a}
+.report{background:#f5f1ee;border:1.5px solid #141414;border-radius:6px;padding:22px;margin-bottom:16px}
+.report-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.report-top h3{font-size:18px;font-weight:700}
 .report-stats{display:flex;gap:24px}
-.report-stats span{font-size:13px;color:#8a8478;display:block}
+.report-stats span{font-size:13px;color:#35363a;display:block}
 .report-stats strong{font-size:20px}
-.report-year label{font-size:13px}
-.report-year select{margin-left:8px;padding:4px 8px;border:1px solid #e5e0d8;border-radius:6px}
-.task-list{display:flex;flex-direction:column;gap:8px}
-.add-button{padding:8px 16px;background:#1a1a1a;color:#fff;border:none;border-radius:20px;font-size:14px;cursor:pointer}
-.notice,.search-empty{display:none}
+.report-year label{font-size:13px;color:#35363a}
+.report-year select{margin-left:8px;padding:6px 10px;border:1.5px solid #141414;border-radius:6px;background:#fff;font-family:inherit}
+/* ---- record rows + checkboxes ---- */
+.task-list{display:flex;flex-direction:column;gap:10px}
+.record{background:#f5f1ee;border:1.5px solid #141414;border-radius:6px;padding:14px 16px}
+.record-top{display:flex;align-items:flex-start;gap:12px}
+.done-check{flex:0 0 auto;margin-top:3px;cursor:pointer}
+.done-check input{position:absolute;opacity:0;width:1px;height:1px}
+.done-check .box{display:inline-block;width:22px;height:22px;border:2px solid #141414;border-radius:5px;background:#fff;vertical-align:middle;position:relative}
+.done-check input:checked + .box{background:#5c5754;border-color:#5c5754}
+.done-check input:checked + .box::after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(42deg)}
+.done-check input:focus-visible + .box{outline:2px solid #141414;outline-offset:2px}
+.record-title{font-size:15px;font-weight:700;color:#141414}
+.record.done .record-title{text-decoration:line-through;opacity:.55}
+.record.done{opacity:.75}
+.record-body{margin-top:8px;font-size:14px;color:#35363a;display:none}
+.record.open .record-body{display:block}
+.record-toggle{margin-left:auto;background:none;border:none;color:#141414;font-weight:800;font-size:13px;letter-spacing:.05em;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media (min-width:700px){
+  .mast h1{font-size:40px}
+  .overview-lead h2{font-size:52px}
+  .tabs-grid button{font-size:15px}
+}
 </style>
 </head>
 <body>
+<div class="appbar"><span>Bri Babineaux</span></div>
 <main>
 <header class="mast">
-<div class="title-line">
-<div><p>View-only workspace</p><h1>Bri Command Center</h1></div>
-<span class="readonly">Read only</span>
-</div>
-<div class="search">
-<label for="search">Search all records</label>
-<input id="search" type="search" placeholder="Search all records" autocomplete="off">
-<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
-</div>
+<h1>Bri Command Center</h1>
 </header>
 <nav class="tabs" aria-label="Command center sections">
 <div class="tabs-row overview-row"><button class="active" data-section="overview">Overview</button></div>
-<div class="tabs-row">
+<div class="tabs-row tabs-grid">
 <button data-section="appointments">Appointments</button><button data-section="bookings">Bookings</button><button data-section="calendar">Calendar</button><button data-section="contacts">Contacts</button><button data-section="notes">Notes</button><button data-section="podcasts">Podcasts</button><button data-section="revenue">Revenue</button><button data-section="tasks">Tasks</button><button data-section="travel">Travel</button>
 </div>
 </nav>
-<div id="notice" class="notice" role="status"></div>
-<div id="search-empty" class="search-empty"><h2>No matching records</h2><p>Try a different name, category, detail, email, or phone number.</p></div>
-<section class="view" data-view="overview">
-<div class="overview-lead"><p class="eyebrow">Operations at a glance</p><h2>Ready for the first update</h2><p>The workspace is organized and ready. Records will appear in their matching sections and categories.</p></div>
+
+<section class="view active" data-view="overview">
+<div class="overview-lead">
+<p class="eyebrow">Operations at a glance</p>
+<h2>Ready for the first update</h2>
+<p class="lead-sub">The next scheduled item will appear here.</p>
+</div>
+<hr class="rule">
 <div class="snapshot" aria-label="Workspace totals">
-<button data-jump="revenue"><strong>$0</strong><span>Revenue received</span><small>Recorded revenue <b>Open →</b></small></button>
-<button data-jump="bookings"><strong>0</strong><span>Non-podcast bookings</span><small>Open <b>→</b></small></button>
-<button data-jump="podcasts"><strong>0</strong><span>Podcast schedule items</span><small>Open <b>→</b></small></button>
-<button data-jump="travel"><strong>0</strong><span>Travel</span><small>Open <b>→</b></small></button>
-<button data-jump="contacts"><strong>0</strong><span>Contacts</span><small>Open <b>→</b></small></button>
-<button data-jump="appointments"><strong>0</strong><span>Appointments</span><small>Open <b>→</b></small></button>
-<button data-jump="notes"><strong>0</strong><span>Correspondence notes</span><small>Open <b>→</b></small></button>
-<button data-jump="tasks"><strong id="overview-task-count">0</strong><span>Tasks</span><small>Open <b>→</b></small></button>
+<button class="stat" data-jump="revenue"><span class="num">$0</span><span class="lbl">Revenue received</span><span class="foot"><b>2026</b><b>OPEN &rarr;</b></span></button>
+<div class="stat-grid">
+<button class="stat" data-jump="bookings"><span class="num">0</span><span class="lbl">Non-podcast bookings</span><span class="foot"><b></b><b>OPEN &rarr;</b></span></button><button class="stat" data-jump="podcasts"><span class="num">0</span><span class="lbl">Podcast schedule items</span><span class="foot"><b></b><b>OPEN &rarr;</b></span></button>
+</div>
+<div class="stat-grid">
+<button class="stat" data-jump="travel"><span class="num">0</span><span class="lbl">Travel</span><span class="foot"><b></b><b>OPEN &rarr;</b></span></button><button class="stat" data-jump="contacts"><span class="num">0</span><span class="lbl">Contacts</span><span class="foot"><b></b><b>OPEN &rarr;</b></span></button>
+</div>
+<div class="stat-grid">
+<button class="stat" data-jump="appointments"><span class="num">0</span><span class="lbl">Appointments</span><span class="foot"><b></b><b>OPEN &rarr;</b></span></button><button class="stat" data-jump="notes"><span class="num">0</span><span class="lbl">Correspondence notes</span><span class="foot"><b></b><b>OPEN &rarr;</b></span></button>
+</div>
+<div class="stat-grid">
+<button class="stat" data-jump="tasks"><span class="num">0</span><span class="lbl">Tasks</span><span class="foot"><b></b><b>OPEN &rarr;</b></span></button><button class="stat" data-jump="overview" style="visibility:hidden" aria-hidden="true" tabindex="-1"><span class="num">&nbsp;</span></button>
+</div>
 </div>
 </section>
-<section class="view" data-view="appointments" hidden>
+
+<section class="view" data-view="appointments">
 <div class="section-head"><div><h2>Appointments</h2><p>0 items</p></div></div>
 <p class="section-intro">Appointment-only calendar entries are organized here and tagged with the applicable service provider.</p>
 <section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming appointments</h3><p>Appointments will appear here with their service provider tag.</p></div></section>
 <section><div class="period-head"><h3>Past</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
 </section>
-<section class="view" data-view="bookings" hidden>
+
+<section class="view" data-view="bookings">
 <div class="section-head"><div><h2>Bookings</h2><p>0 items</p></div></div>
 <div class="filters"><button class="active">Performance <span>0</span></button><button>Special Events <span>0</span></button><button>Tour Dates <span>0</span></button></div>
 <section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming bookings</h3><p>Tour dates, performances, and special events will appear here.</p></div></section>
 <section><div class="period-head"><h3>Past</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
 </section>
-<section class="view" data-view="calendar" hidden>
+
+<section class="view" data-view="calendar">
 <div class="section-head"><div><h2>Calendar</h2><p>0 items</p></div></div>
 <section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming calendar items</h3><p>Scheduled dates will appear here.</p></div></section>
 <section><div class="period-head"><h3>Past</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
 </section>
-<section class="view" data-view="contacts" hidden>
+
+<section class="view" data-view="contacts">
 <div class="section-head"><div><h2>Contacts</h2><p>0 records</p></div></div>
 <div class="filters"><button class="active">All <span>0</span></button><button>Churches <span>0</span></button><button>Emergency Contacts <span>0</span></button><button>Insurance <span>0</span></button><button>Media <span>0</span></button><button>Service Providers <span>0</span></button></div>
 <div class="empty"><h3>No contacts yet</h3><p>Contacts will appear here organized by category.</p></div>
 </section>
-<section class="view" data-view="podcasts" hidden>
+
+<section class="view" data-view="podcasts">
 <div class="section-head"><div><h2>Podcasts</h2><p>0 items</p></div></div>
 <section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming podcasts</h3><p>Podcast appearances will appear here.</p></div></section>
 <section><div class="period-head"><h3>Past</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
 </section>
-<section class="view" data-view="revenue" hidden>
+
+<section class="view" data-view="revenue">
 <div class="section-head"><div><h2>Revenue</h2></div></div>
 <div class="financial"><div><span>Annual revenue received</span><strong>$0</strong><small>Recorded revenue</small></div><div><span>Revenue records</span><strong>0</strong><small>Bookings with entered fees</small></div></div>
 <div class="empty"><h3>No revenue recorded</h3><p>Paid booking revenue will appear here.</p></div>
 </section>
-<section class="view" data-view="notes" hidden>
+
+<section class="view" data-view="notes">
 <div class="section-head"><div><h2>Notes</h2><p>0 items</p></div></div>
 <p class="section-intro">Track the latest email correspondence tied to a booking, including podcast, radio, and TV interviews.</p>
 <div class="empty"><h3>No correspondence tracked yet</h3><p>Notes will appear here.</p></div>
 </section>
-<section class="view" data-view="tasks" hidden>
-<div class="section-head"><div><h2>Tasks</h2><p>0 items</p></div><button class="add-button" type="button">+ Add</button></div>
+
+<section class="view" data-view="tasks">
+<div class="section-head"><div><h2>Tasks</h2><p>0 items</p></div></div>
 <div class="filters"><button class="active">Bri To Do's <span>0</span></button><button>Michelle's To Do's <span>0</span></button></div>
+<div class="task-list" id="task-list"></div>
 <div class="empty"><h3>No tasks yet</h3><p>Tasks will appear here.</p></div>
 </section>
-<section class="view" data-view="travel" hidden>
+
+<section class="view" data-view="travel">
 <div class="section-head"><div><h2>Travel</h2><p>0 items</p></div></div>
 <section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming travel</h3><p>Flights, hotels, ground transportation, and itinerary details will appear here.</p></div></section>
 <section><div class="period-head"><h3>Past &amp; cancelled</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
 </section>
 </main>
 <script>
-// Tab switching
-document.querySelectorAll('.tabs button').forEach(function(btn){
+(function(){
+"use strict";
+/* ---- tab switching ---- */
+var tabBtns = document.querySelectorAll('.tabs button');
+tabBtns.forEach(function(btn){
   btn.addEventListener('click', function(){
-    document.querySelectorAll('.tabs button').forEach(function(b){b.classList.remove('active');});
+    tabBtns.forEach(function(b){ b.classList.remove('active'); });
     btn.classList.add('active');
     var s = btn.getAttribute('data-section');
     document.querySelectorAll('.view').forEach(function(v){
-      v.style.display = (v.getAttribute('data-view')===s) ? 'block' : 'none';
+      v.classList.toggle('active', v.getAttribute('data-view') === s);
     });
-    // stat card jumps
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   });
 });
-document.querySelectorAll('.snapshot button').forEach(function(card){
+/* ---- stat card jumps ---- */
+document.querySelectorAll('[data-jump]').forEach(function(card){
   card.addEventListener('click', function(){
     var target = card.getAttribute('data-jump');
-    var tab = document.querySelector('.tabs button[data-section="'+target+'"]');
-    if(tab) tab.click();
+    var tab = document.querySelector('.tabs button[data-section="' + target + '"]');
+    if (tab) tab.click();
   });
 });
-// Search filter (simple)
-document.getElementById('search').addEventListener('input', function(e){
-  var q = e.target.value.toLowerCase();
-  var empty = document.getElementById('search-empty');
-  if(q.length>1){ empty.style.display='block'; } else { empty.style.display='none'; }
-});
+/* ---- record rows with persistent checkboxes (Tasks + Rollout) ----
+   Checkboxes are the ONLY editable elements on this view-only page.
+   State is stored per-visitor in localStorage: bri-cc-done-<section>-<id> */
+var CHECKABLE = { tasks: true, rollout: true };
+function esc(s){
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+function doneKey(section, id){ return 'bri-cc-done-' + section + '-' + id; }
+function makeRecordRow(record, section){
+  var id = record.id || record.title || Math.random().toString(36).slice(2);
+  var wrap = document.createElement('div');
+  wrap.className = 'record';
+  var top = document.createElement('div');
+  top.className = 'record-top';
+  if (CHECKABLE[section]) {
+    var label = document.createElement('label');
+    label.className = 'done-check';
+    var box = document.createElement('input');
+    box.type = 'checkbox';
+    var key = doneKey(section, id);
+    box.setAttribute('aria-label', 'Mark as done: ' + (record.title || 'record'));
+    try { box.checked = localStorage.getItem(key) === '1'; } catch(e){}
+    if (box.checked) wrap.classList.add('done');
+    box.addEventListener('change', function(){
+      wrap.classList.toggle('done', box.checked);
+      try {
+        if (box.checked) localStorage.setItem(key, '1');
+        else localStorage.removeItem(key);
+      } catch(e){}
+    });
+    var span = document.createElement('span');
+    span.className = 'box';
+    span.setAttribute('aria-hidden', 'true');
+    label.appendChild(box);
+    label.appendChild(span);
+    top.appendChild(label);
+  }
+  var title = document.createElement('div');
+  title.className = 'record-title';
+  title.textContent = record.title || 'Untitled';
+  top.appendChild(title);
+  var toggle = document.createElement('button');
+  toggle.className = 'record-toggle';
+  toggle.type = 'button';
+  toggle.textContent = 'VIEW DETAILS \u25BE';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.addEventListener('click', function(){
+    var open = wrap.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  top.appendChild(toggle);
+  wrap.appendChild(top);
+  if (record.detailsHtml) {
+    var body = document.createElement('div');
+    body.className = 'record-body';
+    body.innerHTML = record.detailsHtml;
+    wrap.appendChild(body);
+  }
+  return wrap;
+}
+/* Renders records for a section; tasks/rollout rows get checkboxes.
+   Bri has no records yet — this is ready for when her details are entered. */
+function renderRecords(section, records, mountId){
+  var mount = document.getElementById(mountId);
+  if (!mount) return;
+  mount.innerHTML = '';
+  (records || []).forEach(function(r){
+    mount.appendChild(makeRecordRow(r, section));
+  });
+}
+/* expose for future data wiring */
+window.BriCC = { renderRecords: renderRecords, makeRecordRow: makeRecordRow, esc: esc };
+})();
 </script>
 </body>
 </html>
