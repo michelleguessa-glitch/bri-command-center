@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bri Command Center Snapshot</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f7f5f2;color:#1a1a1a;line-height:1.5;padding:16px;max-width:1100px;margin:0 auto}
+.mast{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:20px;margin-bottom:16px}
+.title-line{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.title-line p{font-size:12px;color:#8a8478;text-transform:uppercase;letter-spacing:.08em}
+.title-line h1{font-size:28px;font-weight:700}
+.readonly{font-size:12px;background:#eef0ee;color:#5c665c;border-radius:20px;padding:4px 12px;white-space:nowrap}
+.search{margin-top:12px;position:relative}
+.search label{position:absolute;left:-9999px}
+.search input{width:100%;padding:10px 14px 10px 40px;border:1px solid #e5e0d8;border-radius:8px;font-size:15px}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:#8a8478;fill:none;stroke-width:2}
+.tabs{margin-bottom:16px}
+.tabs-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.tabs-row button{padding:8px 16px;border:1px solid #e5e0d8;background:#fff;border-radius:20px;font-size:14px;cursor:pointer}
+.tabs-row button.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.view{display:none}
+.view:first-of-type{display:block}
+.overview-lead{margin-bottom:16px}
+.eyebrow{font-size:12px;color:#8a8478;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.overview-lead h2{font-size:22px;margin-bottom:6px}
+.overview-lead p{color:#5c5754}
+.snapshot{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.snapshot button{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:16px;text-align:left;cursor:pointer;font-family:inherit}
+.snapshot button strong{font-size:24px;display:block}
+.snapshot button span{font-size:14px;color:#5c5754;display:block;margin:4px 0}
+.snapshot button small{font-size:12px;color:#8a8478}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.section-head h2{font-size:20px}
+.section-head p{font-size:13px;color:#8a8478}
+.section-intro{color:#5c5754;margin-bottom:12px;font-size:14px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.filters button{padding:6px 14px;border:1px solid #e5e0d8;background:#fff;border-radius:16px;font-size:13px;cursor:pointer}
+.filters button.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.filters button span{opacity:.7}
+.period-head{display:flex;justify-content:space-between;align-items:center;margin:16px 0 8px}
+.period-head h3{font-size:16px}
+.count{font-size:12px;background:#eef0ee;border-radius:12px;padding:2px 10px;color:#5c665c}
+.empty{background:#fff;border:1px dashed #d8d2c6;border-radius:12px;padding:24px;text-align:center;color:#8a8478}
+.empty h3{font-size:16px;color:#5c5754;margin-bottom:4px}
+.empty.compact{padding:12px}
+.group{margin-bottom:12px}
+.category-head{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid #e5e0d8;border-radius:8px;padding:12px 16px}
+.category-head h3{font-size:15px}
+.category-head p{font-size:12px;color:#8a8478}
+.subcategories{padding:8px 0 0 16px}
+.subcategory{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;border-bottom:1px solid #f0ece4}
+.subcategory span{color:#8a8478;font-size:13px}
+.financial{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:16px}
+.financial>div{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:16px}
+.financial span{font-size:13px;color:#8a8478;display:block}
+.financial strong{font-size:22px;display:block;margin:4px 0}
+.financial small{font-size:12px;color:#8a8478}
+.report{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:20px;margin-bottom:16px}
+.report-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+.report-top h3{font-size:18px}
+.report-stats{display:flex;gap:24px}
+.report-stats span{font-size:13px;color:#8a8478;display:block}
+.report-stats strong{font-size:20px}
+.report-year label{font-size:13px}
+.report-year select{margin-left:8px;padding:4px 8px;border:1px solid #e5e0d8;border-radius:6px}
+.task-list{display:flex;flex-direction:column;gap:8px}
+.add-button{padding:8px 16px;background:#1a1a1a;color:#fff;border:none;border-radius:20px;font-size:14px;cursor:pointer}
+.notice,.search-empty{display:none}
+</style>
+</head>
+<body>
+<main>
+<header class="mast">
+<div class="title-line">
+<div><p>View-only workspace</p><h1>Bri Command Center</h1></div>
+<span class="readonly">Read only</span>
+</div>
+<div class="search">
+<label for="search">Search all records</label>
+<input id="search" type="search" placeholder="Search all records" autocomplete="off">
+<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+</div>
+</header>
+<nav class="tabs" aria-label="Command center sections">
+<div class="tabs-row overview-row"><button class="active" data-section="overview">Overview</button></div>
+<div class="tabs-row">
+<button data-section="appointments">Appointments</button><button data-section="bookings">Bookings</button><button data-section="calendar">Calendar</button><button data-section="contacts">Contacts</button><button data-section="notes">Notes</button><button data-section="podcasts">Podcasts</button><button data-section="revenue">Revenue</button><button data-section="tasks">Tasks</button><button data-section="travel">Travel</button>
+</div>
+</nav>
+<div id="notice" class="notice" role="status"></div>
+<div id="search-empty" class="search-empty"><h2>No matching records</h2><p>Try a different name, category, detail, email, or phone number.</p></div>
+<section class="view" data-view="overview">
+<div class="overview-lead"><p class="eyebrow">Operations at a glance</p><h2>Ready for the first update</h2><p>The workspace is organized and ready. Records will appear in their matching sections and categories.</p></div>
+<div class="snapshot" aria-label="Workspace totals">
+<button data-jump="revenue"><strong>$0</strong><span>Revenue received</span><small>Recorded revenue <b>Open →</b></small></button>
+<button data-jump="bookings"><strong>0</strong><span>Non-podcast bookings</span><small>Open <b>→</b></small></button>
+<button data-jump="podcasts"><strong>0</strong><span>Podcast schedule items</span><small>Open <b>→</b></small></button>
+<button data-jump="travel"><strong>0</strong><span>Travel</span><small>Open <b>→</b></small></button>
+<button data-jump="contacts"><strong>0</strong><span>Contacts</span><small>Open <b>→</b></small></button>
+<button data-jump="appointments"><strong>0</strong><span>Appointments</span><small>Open <b>→</b></small></button>
+<button data-jump="notes"><strong>0</strong><span>Correspondence notes</span><small>Open <b>→</b></small></button>
+<button data-jump="tasks"><strong id="overview-task-count">0</strong><span>Tasks</span><small>Open <b>→</b></small></button>
+</div>
+</section>
+<section class="view" data-view="appointments" hidden>
+<div class="section-head"><div><h2>Appointments</h2><p>0 items</p></div></div>
+<p class="section-intro">Appointment-only calendar entries are organized here and tagged with the applicable service provider.</p>
+<section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming appointments</h3><p>Appointments will appear here with their service provider tag.</p></div></section>
+<section><div class="period-head"><h3>Past</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
+</section>
+<section class="view" data-view="bookings" hidden>
+<div class="section-head"><div><h2>Bookings</h2><p>0 items</p></div></div>
+<div class="filters"><button class="active">Performance <span>0</span></button><button>Special Events <span>0</span></button><button>Tour Dates <span>0</span></button></div>
+<section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming bookings</h3><p>Tour dates, performances, and special events will appear here.</p></div></section>
+<section><div class="period-head"><h3>Past</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
+</section>
+<section class="view" data-view="calendar" hidden>
+<div class="section-head"><div><h2>Calendar</h2><p>0 items</p></div></div>
+<section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming calendar items</h3><p>Scheduled dates will appear here.</p></div></section>
+<section><div class="period-head"><h3>Past</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
+</section>
+<section class="view" data-view="contacts" hidden>
+<div class="section-head"><div><h2>Contacts</h2><p>0 records</p></div></div>
+<div class="filters"><button class="active">All <span>0</span></button><button>Churches <span>0</span></button><button>Emergency Contacts <span>0</span></button><button>Insurance <span>0</span></button><button>Media <span>0</span></button><button>Service Providers <span>0</span></button></div>
+<div class="empty"><h3>No contacts yet</h3><p>Contacts will appear here organized by category.</p></div>
+</section>
+<section class="view" data-view="podcasts" hidden>
+<div class="section-head"><div><h2>Podcasts</h2><p>0 items</p></div></div>
+<section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming podcasts</h3><p>Podcast appearances will appear here.</p></div></section>
+<section><div class="period-head"><h3>Past</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
+</section>
+<section class="view" data-view="revenue" hidden>
+<div class="section-head"><div><h2>Revenue</h2></div></div>
+<div class="financial"><div><span>Annual revenue received</span><strong>$0</strong><small>Recorded revenue</small></div><div><span>Revenue records</span><strong>0</strong><small>Bookings with entered fees</small></div></div>
+<div class="empty"><h3>No revenue recorded</h3><p>Paid booking revenue will appear here.</p></div>
+</section>
+<section class="view" data-view="notes" hidden>
+<div class="section-head"><div><h2>Notes</h2><p>0 items</p></div></div>
+<p class="section-intro">Track the latest email correspondence tied to a booking, including podcast, radio, and TV interviews.</p>
+<div class="empty"><h3>No correspondence tracked yet</h3><p>Notes will appear here.</p></div>
+</section>
+<section class="view" data-view="tasks" hidden>
+<div class="section-head"><div><h2>Tasks</h2><p>0 items</p></div><button class="add-button" type="button">+ Add</button></div>
+<div class="filters"><button class="active">Bri To Do's <span>0</span></button><button>Michelle's To Do's <span>0</span></button></div>
+<div class="empty"><h3>No tasks yet</h3><p>Tasks will appear here.</p></div>
+</section>
+<section class="view" data-view="travel" hidden>
+<div class="section-head"><div><h2>Travel</h2><p>0 items</p></div></div>
+<section><div class="period-head"><h3>Upcoming</h3><span class="count">0</span></div><div class="empty"><h3>No upcoming travel</h3><p>Flights, hotels, ground transportation, and itinerary details will appear here.</p></div></section>
+<section><div class="period-head"><h3>Past &amp; cancelled</h3><span class="count">0</span></div><div class="empty compact">Nothing here yet.</div></section>
+</section>
+</main>
+<script>
+// Tab switching
+document.querySelectorAll('.tabs button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.tabs button').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    var s = btn.getAttribute('data-section');
+    document.querySelectorAll('.view').forEach(function(v){
+      v.style.display = (v.getAttribute('data-view')===s) ? 'block' : 'none';
+    });
+    // stat card jumps
+    window.scrollTo(0,0);
+  });
+});
+document.querySelectorAll('.snapshot button').forEach(function(card){
+  card.addEventListener('click', function(){
+    var target = card.getAttribute('data-jump');
+    var tab = document.querySelector('.tabs button[data-section="'+target+'"]');
+    if(tab) tab.click();
+  });
+});
+// Search filter (simple)
+document.getElementById('search').addEventListener('input', function(e){
+  var q = e.target.value.toLowerCase();
+  var empty = document.getElementById('search-empty');
+  if(q.length>1){ empty.style.display='block'; } else { empty.style.display='none'; }
+});
+</script>
+</body>
+</html>
